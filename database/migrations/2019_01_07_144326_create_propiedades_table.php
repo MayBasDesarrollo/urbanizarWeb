@@ -16,7 +16,7 @@ class CreatePropiedadesTable extends Migration
         Schema::create('propiedades', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->string('descripcion');
+            $table->longText('descripcion');
             $table->string('direccion');
             $table->unsignedInteger('id_tprop');
             $table->foreign('id_tprop')->references('id')->on('tipo_propiedades');

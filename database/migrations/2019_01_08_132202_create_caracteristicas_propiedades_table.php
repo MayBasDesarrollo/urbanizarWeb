@@ -20,7 +20,6 @@ class CreateCaracteristicasPropiedadesTable extends Migration
             // $table->string('id_tcarac');
             // $table->foreign('id_tcarac')->references('id')->on('tipo_caracteristicas');
             $table->integer('catidad');
-            $table->string('icono');
             $table->timestamps();
         });
     }
