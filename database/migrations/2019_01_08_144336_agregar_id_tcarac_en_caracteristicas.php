@@ -14,8 +14,8 @@ class AgregarIdTcaracEnCaracteristicas extends Migration
     public function up()
     {
         Schema::table('caracteristicas_propiedades', function(Blueprint $table) {
-            $table->unsignedInteger('id_tcarac')->after('id'); //entero sin signo
-            $table->foreign('id_tcarac')->references('id')->on('tipo_caracteristicas');
+            $table->unsignedInteger('tcarac_id')->after('id'); //entero sin signo
+            $table->foreign('tcarac_id')->references('id')->on('tipo_caracteristicas');
         });
     }
 
@@ -27,8 +27,8 @@ class AgregarIdTcaracEnCaracteristicas extends Migration
     public function down()
     {
         Schema::table('caracteristicas_propiedades', function(Blueprint $table) {
-            $table->dropforeign(['id_tcarac']);
-            $table->dropColumn('id_tcarac'); 
+            $table->dropforeign(['tcarac_id']);
+            $table->dropColumn('tcarac_id'); 
         });
     }
 }

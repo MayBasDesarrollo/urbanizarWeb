@@ -15,10 +15,6 @@ class CreateCaracteristicasPropiedadesTable extends Migration
     {
         Schema::create('caracteristicas_propiedades', function (Blueprint $table) {
             $table->increments('id');
-            //$table->integer('id_propiedad');
-            //$table->foreign('id_propiedad')->references('id')->on('propiedades');
-            // $table->string('id_tcarac');
-            // $table->foreign('id_tcarac')->references('id')->on('tipo_caracteristicas');
             $table->integer('catidad');
             $table->timestamps();
         });

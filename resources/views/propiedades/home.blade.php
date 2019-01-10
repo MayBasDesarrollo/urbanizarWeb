@@ -85,50 +85,26 @@
         </header>
 
         <div class="row">
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-            <div class="card h-100">
-                {{--  <a href="{{ route('prop.show', $user) }}"><img class="card-img-top" src="{{asset('img/propiedades/d1.jfif')}}" alt=""></a>  --}}
-                <a href="{{ url("/propiedades/1") }}"><img class="card-img-top" src="{{asset('img/propiedades/d1.jfif')}}" alt=""></a>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="{{ url("/propiedades/1") }}" style="text-decoration:none;color:black;">1 Ambiente</a>
-                    </h4>
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!
-                    </p>
+            @foreach ($propiedades as $propiedad) 
+                <div class="col-lg-4 col-sm-6 portfolio-item">
+                    <div class="card h-100">
+                        <a href="{{ route('prop.show', $propiedad) }}"><img class="card-img-top" src="{{asset('img/propiedades/d1.jfif')}}" alt=""></a> 
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a href="{{ url("/propiedades/1") }}" style="text-decoration:none;color:black;">{{$propiedad->nombre}}</a>
+                            </h4>
+                            <p class="card-text">
+                                {{ str_limit($propiedad->descripcion, 220)}}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-            <div class="card h-100">
-                <a href="{{ url("/propiedades/2") }}"><img class="card-img-top" src="{{asset('img/propiedades/d2.jfif')}}" alt=""></a>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="{{ url("/propiedades/2") }}" style="text-decoration:none;color:black;">2 Ambiente</a>
-                    </h4>
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
-                    </p>
-                </div>
-            </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-            <div class="card h-100">
-                <a href="{{ url("/propiedades/3") }}"><img class="card-img-top" src="{{asset('img/propiedades/d1.jfif')}}" alt=""></a>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="{{ url("/propiedades/3") }}" style="text-decoration:none;color:black;">3 Ambiente</a>
-                    </h4>
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!
-                    </p>
-                </div>
-            </div>
-            </div>
+            @endforeach
         </div>
         <!-- /.row -->
 
         <!-- Features Section -->
+        <!--
         <div class="row">
             <div class="col-lg-6">
                 <h2>¿Sabias Que?</h2>
@@ -148,6 +124,7 @@
                 <img class="img-fluid rounded" src="{{asset('img/sabias/museosarmiento.jpg')}}" alt="">
             </div>
         </div>
+        -->
         <!-- /.row -->
 
         <hr>

@@ -18,8 +18,8 @@ class CreatePropiedadesTable extends Migration
             $table->string('nombre');
             $table->longText('descripcion');
             $table->string('direccion');
-            $table->unsignedInteger('id_tprop');
-            $table->foreign('id_tprop')->references('id')->on('tipo_propiedades');
+            $table->unsignedInteger('tprop_id');
+            $table->foreign('tprop_id')->references('id')->on('tipo_propiedades');
             $table->bigInteger('valor');
             $table->bigInteger('expensas');
             $table->boolean('disponibilidad');

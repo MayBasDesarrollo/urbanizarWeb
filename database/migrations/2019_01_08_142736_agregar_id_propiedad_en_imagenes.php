@@ -14,8 +14,8 @@ class AgregarIdPropiedadEnImagenes extends Migration
     public function up()
     {
         Schema::table('imagenes_propiedades', function(Blueprint $table) {
-            $table->unsignedInteger('id_propiedad')->after('id'); //entero sin signo
-            $table->foreign('id_propiedad')->references('id')->on('propiedades');
+            $table->unsignedInteger('propiedad_id')->after('id'); //entero sin signo
+            $table->foreign('propiedad_id')->references('id')->on('propiedades');
         });
     }
 
@@ -27,8 +27,8 @@ class AgregarIdPropiedadEnImagenes extends Migration
     public function down()
     {
         Schema::table('imagenes_propiedades', function(Blueprint $table) {
-            $table->dropforeign(['id_propiedad']);
-            $table->dropColumn('id_propiedad'); 
+            $table->dropforeign(['propiedad_id']);
+            $table->dropColumn('propiedad_id'); 
         });
     }
 }
