@@ -15,9 +15,6 @@ class CreateImagenesPropiedadesTable extends Migration
     {
         Schema::create('imagenes_propiedades', function (Blueprint $table) {
             $table->increments('id');
-            //$table->integer('id_propiedad');
-            //$table->foreign('id_propiedad')->references('id')->on('propiedades');
-            $table->string('nombre');
             $table->string('ruta');
             $table->timestamps();
         });
