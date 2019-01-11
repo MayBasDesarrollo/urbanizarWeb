@@ -10,10 +10,11 @@ class HomeController extends Controller
     public function index()
     {
         //$propiedades = Propiedades::all();
-        $propiedades = Propiedades::where('destacada', 1)->get();
+        //$propiedades = Propiedades::where('destacada', 1)->get();
+        $propiedades = Propiedades::with('imagenesPropiedades')->where('destacada', 1)->get();
 
+        //dd($propiedades);
         //Falta relacionar con las imagenes :(
-        dd($propiedades);
 
         return view('propiedades.home', compact('propiedades'));
     }

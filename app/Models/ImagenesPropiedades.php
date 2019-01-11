@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class ImagenesPropiedades extends Model
 {
     //
-    // public function propiedades()
-    // {
-    //     return $this->hasOne(Propiedades::class);
-    // }
+    public function propiedades()
+    {
+        return $this->hasOne(Propiedades::class, 'id', 'id_propiedad');
+    }
 }

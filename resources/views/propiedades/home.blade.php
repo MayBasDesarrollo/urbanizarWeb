@@ -94,6 +94,7 @@
                                 <a href="{{ url("/propiedades/1") }}" style="text-decoration:none;color:black;">{{$propiedad->nombre}}</a>
                             </h4>
                             <p class="card-text">
+                                {{-- {{ $propiedad->imagenesPropiedades }} --}}
                                 {{ str_limit($propiedad->descripcion, 220)}}
                             </p>
                         </div>
