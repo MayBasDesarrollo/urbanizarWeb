@@ -1,10 +1,12 @@
 <?php
 
+//HOME DE LA PAGINA
 Route::get('/','HomeController@index')->name('prop.home');
 
-
-Route::get('propiedades/', 'PropiedadesController@index')->name('prop.index');
-Route::get('propiedades/{user}', 'PropiedadesController@show')
-        ->where('user', '[0-9]+')
-        // ->where('id', '[0-9]+')
+//DETALLE DE LA PROPIEDAD
+Route::get('propiedades/{propiedad}', 'PropiedadesController@show')
+        ->where('propiedad', '[0-9]+')
         ->name('prop.show');
+
+//LISTADO DE PROPIEDADES
+Route::get('propiedades/', 'PropiedadesController@index')->name('prop.index');

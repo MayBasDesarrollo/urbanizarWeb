@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\{Propiedades};
 
 class PropiedadesController extends Controller
 {
@@ -37,16 +38,10 @@ class PropiedadesController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+
+    public function show(Propiedades $propiedad)
     {
-        //return view('users.show', compact('user'));
-        return view('propiedades.show');
+        return view('propiedades.show', compact('propiedad'));
     }
 
     /**

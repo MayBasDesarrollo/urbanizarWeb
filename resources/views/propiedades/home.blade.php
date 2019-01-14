@@ -89,12 +89,12 @@
                 <div class="col-lg-4 col-sm-6 portfolio-item">
                     <div class="card h-100">
                         @foreach ($propiedad->imagenesPropiedades as $imagen)
-                            <a href="{{ route('prop.show', $propiedad) }}"><img class="card-img-top" src="{{asset($imagen->ruta)}}" alt=""></a> 
+                            <a href="{{ route('prop.show', ['id'=> $propiedad->id]) }}"><img class="card-img-top" src="{{asset($imagen->ruta)}}" alt=""></a> 
                             @break
                         @endforeach
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="{{ url("/propiedades/1") }}" style="text-decoration:none;color:black;">{{$propiedad->nombre}}</a>
+                                <a href="{{ route('prop.show', $propiedad) }}" style="text-decoration:none;color:black;">{{$propiedad->nombre}}</a>
                             </h4>
                             <p class="card-text">
                                 {{ str_limit($propiedad->descripcion, 220)}}

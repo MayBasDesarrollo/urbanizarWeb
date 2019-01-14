@@ -12,7 +12,7 @@
             <li class="breadcrumb-item">
                 <a href="{{ route('prop.home') }}">Inicio</a>
             </li>
-            <li class="breadcrumb-item active">1 Ambiente</li>
+            <li class="breadcrumb-item active">{{$propiedad->nombre}}</li>
         </ol>
 
         <div class="row">
@@ -26,15 +26,17 @@
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             {{-- /*800x400*/ --}}
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="{{asset('img/propiedades/d1.jfif')}}" alt="First slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{asset('img/propiedades/d2.jfif')}}" alt="Second slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{asset('img/propiedades/d3.jfif')}}" alt="Third slide">
-                            </div>
+                            @foreach ($propiedad->imagenesPropiedades as $key=>$imagen)
+                                @if ($key == 1)
+                                    <div class="carousel-item active">
+                                        <img class="d-block w-100" src="{{asset($imagen->ruta)}}" alt="First slide">
+                                    </div>                                    
+                                @else
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="{{asset($imagen->ruta)}}" alt="Second slide">
+                                    </div>                                    
+                                @endif
+                            @endforeach
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -47,19 +49,12 @@
                     </div>
 
                     <div class="card-body">
-                        <h2 class="card-title">1 Ambiente</h2>
-                        {{--  <i class="fas fa-map-marked-alt"></i>  --}}
+                        <h2 class="card-title">{{$propiedad->nombre}}</h2>
                         <i class="fas fa-map-marker-alt"></i>
-                        <small> Migueletes 1306 , Belgrano, Capital Federal</small>
+                        <small>{{$propiedad->direccion}}</small>
                         <hr>
-
                         <p class="card-text text-justify">
-                            Excel. Piso Esq. Vista Bosque Palermo, Campo Golf, Vilas Tenis Club. Dueño
-                            DUEÑO ALQUILA Piso único, 170 m2. 3 Dormitorios ( 1 en suite).
-                            Gran Living y Comedor apaisados a balcones aterrazados 2º baño completo y toitlette de recepción.
-                            Excelente Coc. Com. con regio equipamiento nuevo; lavadero Depcias. servicio; baulera.
-                            Pisos de parquet de Roble Americano. Servicios centrales . Estado impecable .
-                            Migueletes esq. Teodoro García Piso 10º frente Av. del Libertador . Todo externo.
+                            {{$propiedad->descripcion}}
                         </p>
                         <hr>
 
@@ -163,8 +158,8 @@
                 <!-- Search Widget -->
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h4>Alquiler <small class="float-right">$ 25.000</small> </h4>
-                        <h6>Expensas <small class="float-right">$ 2.000</small> </h6>
+                        <h4>Alquiler <small class="float-right">$ {{$propiedad->valor}}</small> </h4>
+                        <h6>Expensas <small class="float-right">$ {{$propiedad->expensas}}</small> </h6>
                     </div>
                 </div>
 
