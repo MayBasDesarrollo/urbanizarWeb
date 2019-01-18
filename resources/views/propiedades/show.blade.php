@@ -158,8 +158,8 @@
                 <!-- Search Widget -->
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h4>Alquiler <small class="float-right">$ {{$propiedad->valor}}</small> </h4>
-                        <h6>Expensas <small class="float-right">$ {{$propiedad->expensas}}</small> </h6>
+                        <h4>Alquiler <small class="float-right">$ {{ number_format($propiedad->valor, 0, ",", ".") }}</small> </h4>
+                        <h6>Expensas <small class="float-right">$ {{ number_format($propiedad->expensas, 0, ",", ".") }}</small> </h6>
                     </div>
                 </div>
 

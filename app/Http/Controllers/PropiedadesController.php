@@ -41,6 +41,7 @@ class PropiedadesController extends Controller
 
     public function show(Propiedades $propiedad)
     {
+        dd($propiedad);
         return view('propiedades.show', compact('propiedad'));
     }
 

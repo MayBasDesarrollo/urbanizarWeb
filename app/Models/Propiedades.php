@@ -6,16 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Propiedades extends Model
 {
-    //
-
+    //Una propiedad tiene muchas imagenes
     public function imagenesPropiedades()
     {
         return $this->hasMany(ImagenesPropiedades::class, 'propiedad_id');
     }
-    
-    //Una propiedad tiene un tipo de propiedad
-    // public function tipoPropiedades()
-    // {
-    //     return $this->belongsTo(TipoPropiedades::class);
-    // }
+
+    //Una propiedad tiene muchas caracteristicas
+    public function caracteristicasPropiedades()
+    {
+        return $this->hasMany(CaracteristicasPropiedades::class, 'propiedad_id');
+    }
+
 }
