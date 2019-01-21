@@ -25,15 +25,14 @@
                     <!-- Carusel -->
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            {{-- /*800x400*/ --}}
                             @foreach ($propiedad->imagenesPropiedades as $key=>$imagen)
                                 @if ($key == 1)
                                     <div class="carousel-item active">
-                                        <img class="d-block w-100" src="{{asset($imagen->ruta)}}" alt="First slide">
+                                        <img class="d-block w-100" style="height: 400px;" src="{{asset($imagen->ruta)}}">
                                     </div>                                    
                                 @else
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{asset($imagen->ruta)}}" alt="Second slide">
+                                        <img class="d-block w-100" style="height: 400px;" src="{{asset($imagen->ruta)}}">
                                     </div>                                    
                                 @endif
                             @endforeach
@@ -58,94 +57,26 @@
                         </p>
                         <hr>
 
-                        <div class="float-left" style="padding-left: 20px;">
-                            <i class="fas fa-vector-square fa-2x" style="color:#3d5afe"></i>
-                            <strong>170m2 </strong>
-                            <small>Superficie Total</small>
-                        </div>
-                        <div class="float-left" style="padding-left: 20px;">
-                            <i class="fas fa-expand fa-2x" style="color:#3d5afe"></i>
-                            <strong>170m2 </strong>
-                            <small>Superficie Cubierta</small>
-                        </div>
-                        <div class="float-left" style="padding-left: 20px;">
-                            <i class="fas fa-door-open fa-2x" style="color:#3d5afe"></i>
-                            <strong>4</strong>
-                            <small>Ambientes</small>
-                        </div>
-                        <div class="float-left" style="padding-left: 20px;">
-                            <i class="fas fa-bath fa-2x" style="color:#3d5afe"></i>
-                            <strong>3</strong>
-                            <small>Baños</small>
-                        </div>
-
-                        <div class="float-left" style="padding-left: 20px;padding-top: 10px">
-                            <i class="far fa-snowflake fa-2x" style="color:#3d5afe"></i>
-                            <strong>2</strong>
-                            <small>Frio/Calor</small>
-                        </div>
-                        <div class="float-left" style="padding-left: 20px;padding-top: 10px">
-                            <i class="fas fa-dumbbell fa-2x" style="color:#3d5afe"></i>
-                            <strong><i class="fas fa-check"></i></strong>
-                            <small>Gym</small>
-                        </div>
-                        <div class="float-left" style="padding-left: 20px;padding-top: 10px">
-                            <i class="fas fa-bed fa-2x" style="color:#3d5afe"></i>
-                            <strong>2</strong>
-                            <small>Dormitorios</small>
-                        </div>
-                        <div class="float-left" style="padding-left: 20px;padding-top: 10px">
-                            <i class="fas fa-burn fa-2x" style="color:#3d5afe"></i>
-                            <strong>1</strong>
-                            <small>Calefación</small>
-                        </div>
-                        <div class="float-left" style="padding-left: 20px;padding-top: 10px">
-                            <i class="fas fa-user-secret fa-2x" style="color:#3d5afe"></i>
-                            <strong><i class="fas fa-check"></i></strong>
-                            <small>Seguridad/Vigilancia</small>
-                        </div>
-
-                        <div class="float-left" style="padding-left: 20px;padding-top: 10px">
-                            <i class="fas fa-swimming-pool fa-2x" style="color:#3d5afe"></i>
-                            <strong><i class="fas fa-check"></i></strong>
-                            <small>Piscina</small>
-                        </div>
-                        <div class="float-left" style="padding-left: 20px;padding-top: 20px">
-                            <i class="fas fa-warehouse fa-2x" style="color:#3d5afe"></i>
-                            <strong>1</strong>
-                            <small>Cochera</small>
-                        </div>
-                        <div class="float-left" style="padding-left: 20px;padding-top: 20px">
-                            <i class="fas fa-stroopwafel fa-2x" style="color:#3d5afe"></i>
-                            {{-- <i class="fas fa-concierge-bell fa-2x" style="color:#3d5afe"></i> --}}
-                            <strong><i class="fas fa-check"></i></strong>
-                            <small>Parrilla</small>
-                        </div>
-                        <div class="float-left" style="padding-left: 20px;padding-top: 20px">
-                            <i class="fas fa-box fa-2x" style="color:#3d5afe"></i>
-                            <strong>1</strong>
-                            <small>Baulera</small>
-                        </div>
-                        <div class="float-left" style="padding-left: 20px;padding-top: 20px">
-                            <i class="fab fa-dyalog fa-2x" style="color:#3d5afe"></i>
-                            <strong>1</strong>
-                            <small>Balcón</small>
-                        </div>
-                        <div class="float-left" style="padding-left: 20px;padding-top: 20px">
-                            <i class="fas fa-store fa-2x" style="color:#3d5afe"></i>
-                            <strong>1</strong>
-                            <small>Balcón Terraza</small>
-                        </div>
-                        <div class="float-left" style="padding-left: 20px;padding-top: 20px">
-                            <i class="fas fa-columns fa-2x" style="color:#3d5afe"></i>
-                            <strong>3</strong>
-                            <small>Ascensores</small>
-                        </div>
+                        @foreach ($detalles as $caracteristica)
+                            <div class="float-left iconos">
+                                <i class="{{ $caracteristica['1'] }}" style="color:#3d5afe"></i>
+                                <strong>{{ $caracteristica['cantidad'] }}</strong>
+                                <small>{{ $caracteristica['0'] }}</small>
+                            </div>
+                        @endforeach
+                        {{-- Parrilla <i class="fas fa-concierge-bell fa-2x" style="color:#3d5afe"></i> --}}
                     </div>
 
-
                     <div class="card-footer text-muted">
-                        <i class="fas fa-history"><small>  Modificado: 02-11-2018</small></i>
+                        <i class="fas fa-history">
+                            <small>
+                                @if ($propiedad->upadate_at == "")
+                                    Creado: {{ substr($propiedad->created_at, 0, 10) }}
+                                @else
+                                    Modificado: {{ substr($propiedad->upadated_at, 0, 10) }}
+                                @endif 
+                            </small>
+                        </i>
                     </div>
                 </div>
 
@@ -167,7 +98,8 @@
                 <div class="card my-4">
                     <h5 class="card-header">Contacto</h5>
                     <div class="card-body text-justify">
-                        Estas interesado en esta propiedad, no dudes en llamarnos (11 2363 6235) o dejarnos un <a href="" data-toggle="modal" data-target="#infoModal">mensaje</a>.
+                        Estas interesado en esta propiedad, no dudes en llamarnos (11 2363 6235) o dejarnos un 
+                        <a onclick="infoModal({{$propiedad->id}})">mensaje</a>.
                     </div>
                 </div>
 

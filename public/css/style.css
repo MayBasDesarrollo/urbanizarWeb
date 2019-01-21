@@ -299,3 +299,44 @@ h4 del filtro
     bottom: 0;
     left: calc(50% - 20px);
 }
+
+.card-body > .iconos{
+  margin: 10px;
+}
+
+/* Contact Section
+--------------------------------*/
+
+#contact {
+  padding: 60px 0;
+}
+
+#contact .contact-info {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#contact .contact-info i {
+  font-size: 48px;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #3d5afe;
+}
+
+#contact .contact-info address,
+#contact .contact-info p {
+  margin-bottom: 0;
+  color: #000;
+}
+
+#contact .contact-info h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #999;
+}
+
+#contact .contact-address {
+  margin-bottom: 20px;
+}

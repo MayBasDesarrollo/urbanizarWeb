@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Propiedades};
+use App\Models\{Propiedades, TipoCaracteristicas};
 
 class PropiedadesController extends Controller
 {
@@ -41,8 +41,21 @@ class PropiedadesController extends Controller
 
     public function show(Propiedades $propiedad)
     {
-        dd($propiedad);
-        return view('propiedades.show', compact('propiedad'));
+        $tipoCaracteristicas = TipoCaracteristicas::all();
+        $caracteristicas = $propiedad->caracteristicasPropiedades->toArray();
+
+        foreach ($caracteristicas as $key => $caracteristica) {
+            foreach ($tipoCaracteristicas as $key => $tipo) {
+                if ($caracteristica['tcarac_id'] == $tipo->id) {
+                    array_push($caracteristica, $tipo->descripcion, $tipo->icono);
+                    $detalles_caracteristicas[] = $caracteristica;
+                }
+            }
+        }
+
+        $detalles = collect($detalles_caracteristicas);
+
+        return view('propiedades.show', compact('propiedad', 'detalles'));
     }
 
     /**

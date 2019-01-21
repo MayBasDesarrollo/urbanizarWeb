@@ -45,7 +45,7 @@
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPropiedades">
                 <a class="dropdown-item" href="{{ route('prop.index') }}">Venta</a>
                 <a class="dropdown-item" href="{{ route('prop.index') }}">Alquiler</a>
-                <a class="dropdown-item" href="" data-toggle="modal" data-target="#infoModal">Administración</a>
+                <a class="dropdown-item" onclick="infoModal('Propiedades Administración')">Administración</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -53,9 +53,9 @@
                 Tasaciones
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownTasaciones">
-                  <a class="dropdown-item" href="" data-toggle="modal" data-target="#infoModal">Venta</a>
-                  <a class="dropdown-item" href="" data-toggle="modal" data-target="#infoModal">Alquiler</a>
-                  <a class="dropdown-item" href="" data-toggle="modal" data-target="#infoModal">Administración</a>
+                  <a class="dropdown-item" onclick="infoModal('Tasaciones Venta')">Venta</a>
+                  <a class="dropdown-item" onclick="infoModal('Tasaciones Alquiler')">Alquiler</a>
+                  <a class="dropdown-item" onclick="infoModal('Tasaciones Administración')">Administración</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -63,8 +63,8 @@
                 Asesoramiento
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownAsesoramiento">
-                  <a class="dropdown-item" href="" data-toggle="modal" data-target="#infoModal">Venta</a>
-                  <a class="dropdown-item" href="" data-toggle="modal" data-target="#infoModal">Alquiler</a>
+                  <a class="dropdown-item" onclick="infoModal('Asesoramiento Venta')">Venta</a>
+                  <a class="dropdown-item" onclick="infoModal('Asesoramiento Alquiler')">Alquiler</a>
               </div>
             </li>
           </ul>
@@ -76,7 +76,42 @@
 
     <!-- Footer -->
     <footer id="footer">
-      <div class="footer-top">
+        <section id="contact" class="section-bg wow fadeInUp" style="background-color: #f8f9fa;visibility: visible; animation-name: fadeInUp;">
+            <div class="container">
+                <div class="row contact-info">
+                    <div class="col-md-3">
+                        <div class="contact-address">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h3>Dirección</h3>
+                            <address>Belgrano, N° 2040, Buenos Aires, Argentina</address>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="contact-phone">
+                            <i class="fas fa-phone"></i>
+                            <h3>Número de Contacto</h3>
+                            <address>11 2363 6235</address>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="contact-email">
+                            <i class="fas fa-envelope"></i>   
+                            <h3>Email</h3>
+                            <address>info@example.com</address>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="contact-email">
+                                <i class="fab fa-facebook"></i>  
+                            <h3>Facebook</h3>
+                            <address>Urbanizar</address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      {{-- <div class="footer-top">
         <div class="container">
           <div class="row">
 
@@ -88,8 +123,9 @@
                     de las personas, que la retribución se la consecuencia y no el fin.
                 </p>
                 <p>Y recuerde usted ya nos conoce!!</p>
-            </div>
+            </div> --}}
 
+            {{-- nova --}}
             {{--  <div class="col-lg-3 col-md-6 footer-info">
                 <h3>Urbanizar</h3>
                 <p class="text-justify">
@@ -99,8 +135,9 @@
                 </p>
                 <p>Y recuerde usted ya nos conoce!!</p>
             </div>  --}}
+            {{-- nova --}}
 
-            <div class="col-lg-3 col-md-6 footer-contact">
+            {{-- <div class="col-lg-3 col-md-6 footer-contact">
                 <h4>Contacto</h4>
                 <p>
                     Belgrano, N° 2040, Buenos Aires, Argentina.<br>
@@ -110,12 +147,9 @@
 
                 <div class="social-links">
                     <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                    {{--  <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>  --}}
-                    {{--  <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="google-plus"><i class="fab fa-google-plus-g"></i></a>  --}}
                 </div>
-            </div>
-
+            </div> --}}
+{{-- 
             <div class="col-lg-3 col-md-6 footer-links">
                 <h4>Membresia</h4>
                 <ul>
@@ -132,14 +166,10 @@
                         <img class="img-membre" src="{{asset('img/membresia/cucicba1.jpg')}}">
                         Matricula: 6255
                     </li>
-                    {{--  <li><i class="ion-ios-arrow-right"></i> <a href="#">About us</a></li>  --}}
-                    {{--  <li><i class="ion-ios-arrow-right"></i> <a href="#">Services</a></li>
-                    <li><i class="ion-ios-arrow-right"></i> <a href="#">Terms of service</a></li>
-                    <li><i class="ion-ios-arrow-right"></i> <a href="#">Privacy policy</a></li>  --}}
                 </ul>
-            </div>
+            </div> --}}
 
-            <div class="col-lg-3 col-md-6 footer-newsletter">
+            {{-- <div class="col-lg-3 col-md-6 footer-newsletter">
                 <h4>Consultar</h4>
                 <p class="text-justify">
                     Estamos para ofrecerte el mejor servicio que se adapte a tus necesidades, así que si
@@ -150,7 +180,7 @@
 
           </div>
         </div>
-      </div>
+      </div> --}}
       <!-- /.container -->
     </footer>
 
@@ -160,7 +190,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="infoModalLabel">Consultar</h5>
+                <h5 class="modal-title" id="infoModalLabel">Consultar <small id="tituloLugar"></small> </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -168,6 +198,7 @@
                 <div class="modal-body">
                     <p>Nos comunicaremos contigo lo mas pronto posible, para aclarar todas tus dudas sobre la administración de alquileres.</p>
                     <form>
+                        <input type="hidden" value="" id="infoModalLugar">
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Nombre:</label>
                             <input type="text" class="form-control" id="recipient-name">
@@ -192,6 +223,13 @@
     <!-- Bootstrap core JavaScript -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
+    <script>
+        function infoModal($nombre){
+            $("#infoModalLugar").val($nombre);
+            $("#tituloLugar").text("("+$nombre+")");
+            $("#infoModal").modal("show");
+        }
+    </script>
 
   </body>
 

@@ -89,7 +89,9 @@
                 <div class="col-lg-4 col-sm-6 portfolio-item">
                     <div class="card h-100">
                         @foreach ($propiedad->imagenesPropiedades as $imagen)
-                            <a href="{{ route('prop.show', ['id'=> $propiedad->id]) }}"><img class="card-img-top" src="{{asset($imagen->ruta)}}" alt=""></a> 
+                            <a href="{{ route('prop.show', ['id'=> $propiedad->id]) }}">
+                                <img class="card-img-top" src="{{asset($imagen->ruta)}}" alt="" style="height: 161.27px;">
+                            </a> 
                             @break
                         @endforeach
                         <div class="card-body">
@@ -130,7 +132,7 @@
         -->
         <!-- /.row -->
 
-        <hr>
+        {{-- <hr> --}}
 
     </div>
     <!-- /.container -->

@@ -163,10 +163,10 @@
                                 <h5 class="mt-0">1 Ambiente</h5>
                             </a>
                                 <p>
-                                Excel. Piso Esq. Vista Bosque Palermo, Campo Golf, Vilas Tenis Club. Dueño
-                                DUEÑO ALQUILA Piso único, 170 m2. 3 Dormitorios ( 1 en suite). Gran Living
-                                y Comedor apaisados a balcones aterrazados.
-                            </p>
+                                    Excel. Piso Esq. Vista Bosque Palermo, Campo Golf, Vilas Tenis Club. Dueño
+                                    DUEÑO ALQUILA Piso único, 170 m2. 3 Dormitorios ( 1 en suite). Gran Living
+                                    y Comedor apaisados a balcones aterrazados.
+                                </p>
                             <small class="float-right">$ 25.000</small>
                             <i class="fas fa-history"><small>  Modificado: 02-11-2018</small></i>
                         </div>
