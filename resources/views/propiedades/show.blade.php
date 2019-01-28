@@ -64,7 +64,6 @@
                                 <small>{{ $caracteristica['0'] }}</small>
                             </div>
                         @endforeach
-                        {{-- Parrilla <i class="fas fa-concierge-bell fa-2x" style="color:#3d5afe"></i> --}}
                     </div>
 
                     <div class="card-footer text-muted">
@@ -99,7 +98,7 @@
                     <h5 class="card-header">Contacto</h5>
                     <div class="card-body text-justify">
                         Estas interesado en esta propiedad, no dudes en llamarnos (11 2363 6235) o dejarnos un 
-                        <a onclick="infoModal({{$propiedad->id}})">mensaje</a>.
+                        <a style="color:#007bff;cursor:pointer;" onclick="infoModal({{$propiedad->id}})">mensaje</a>.
                     </div>
                 </div>
 
