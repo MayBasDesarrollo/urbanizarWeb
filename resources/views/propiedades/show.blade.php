@@ -26,7 +26,7 @@
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             @foreach ($propiedad->imagenesPropiedades as $key=>$imagen)
-                                @if ($key == 1)
+                                @if ($key == 0)
                                     <div class="carousel-item active">
                                         <img class="d-block w-100" style="height: 400px;" src="{{asset($imagen->ruta)}}">
                                     </div>                                    
