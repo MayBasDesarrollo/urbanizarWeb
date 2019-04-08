@@ -340,3 +340,15 @@ h4 del filtro
 #contact .contact-address {
   margin-bottom: 20px;
 }
+
+.centrarUrba {
+  position: absolute;
+  top: 250px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
