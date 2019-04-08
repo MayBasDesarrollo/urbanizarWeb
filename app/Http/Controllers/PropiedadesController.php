@@ -15,7 +15,7 @@ class PropiedadesController extends Controller
     public function index()
     {
         $propiedades = Propiedades::with('imagenesPropiedades', 'caracteristicasPropiedades')
-                        ->orderByDesc('created_at')->paginate(2);
+                        ->orderByDesc('created_at')->paginate(1);
 
         return view('propiedades.index', compact('propiedades'));
     }

@@ -11,7 +11,7 @@
             <li class="breadcrumb-item active">Búsqueda</li>
         </ol>
         <div class="row">
-            <div class="col-md-4">
+            {{--  <div class="col-md-4">
                 <div class="card mb-4">
                     <h5 class="card-header">Filtro</h5>
                     <div style="padding:10px">
@@ -130,8 +130,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-8">
+            </div>  --}}
+            <div class="col-md-12">
                 @foreach ($propiedades as $propiedad) 
                     <div class="media baner-prop">
                         @foreach ($propiedad->imagenesPropiedades as $imagen)
@@ -144,7 +144,7 @@
                             <a href="{{ route('prop.show', ['id'=> $propiedad->id]) }}" style="text-decoration:none;color:black;">
                                 <h5 class="mt-0">{{ $propiedad->nombre}}</h5>
                             </a>
-                            <p>{{ str_limit($propiedad->descripcion, 220) }}</p>
+                            <p>{{ str_limit($propiedad->descripcion, 500) }}</p>
                             <small class="float-right">$ {{ $propiedad->valor }}</small>
                             <i class="fas fa-history">
                                 <small>
