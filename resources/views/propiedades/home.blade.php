@@ -58,7 +58,7 @@
                                                         <option value="{{ $tipo->id }}">{{ $tipo->descripcion }}</option>
                                                     @endforeach
                                                 </select>
-                                                <input type="text" aria-label="First name" class="form-control" placeholder="Zona">
+                                                {{--  <input type="text" aria-label="First name" class="form-control" placeholder="Zona">  --}}
                                                 <select class="custom-select" id="inputGroupSelect02">
                                                     <option value="0" selected>Tipo de Operación</option>
                                                     @foreach ($tipOperaPropiedades as $tipoOpe)
