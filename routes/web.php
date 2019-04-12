@@ -10,3 +10,6 @@ Route::get('propiedades/{propiedad}', 'PropiedadesController@show')
 
 //LISTADO DE PROPIEDADES
 Route::get('propiedades/', 'PropiedadesController@index')->name('prop.index');
+
+//PRIMER BUSCADOR
+Route::post('/buscador_principal', 'BuscadorController@busquedaPrincipal')->name('buscador.principal');

@@ -50,26 +50,39 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <form action="">
+                                        <form method="POST" action="{{ route('buscador.principal') }}">
+                                            {!! csrf_field() !!}
                                             <div class="input-group">
-                                                <select class="custom-select" id="tipoPropiedad">
+                                                <select class="custom-select" name='tprop_id'>
                                                     <option value="0" selected>Tipo de Propiedad</option>
                                                     @foreach ($tipPropiedades as $tipo)
                                                         <option value="{{ $tipo->id }}">{{ $tipo->descripcion }}</option>
                                                     @endforeach
                                                 </select>
                                                 {{--  <input type="text" aria-label="First name" class="form-control" placeholder="Zona">  --}}
-                                                <select class="custom-select" id="inputGroupSelect02">
+                                                <select class="custom-select" name='topeprop_id'>
                                                     <option value="0" selected>Tipo de Operación</option>
                                                     @foreach ($tipOperaPropiedades as $tipoOpe)
                                                         <option value="{{ $tipoOpe->id }}">{{ $tipoOpe->descripcion }}</option>
                                                     @endforeach
                                                 </select>
                                                 <div class="input-group-prepend">
-                                                    <a href="{{ route('prop.index') }}" style="text-decoration:none; ">
+                                                    {{--  <a href="{{ route('prop.index') }}" style="text-decoration:none; ">
                                                         <span class="input-group-text">Ir</span>
-                                                    </a>
+                                                    </a>  --}}
+                                                    <button class="btn btn-outline-secondary" type="submit">Ir</button>
                                                 </div>
+                                                @if ($errors->has('tprop_id') )
+                                                    <div class="">
+                                                        {{ $errors->first('tprop_id') }}
+                                                    </div>
+                                                @endif
+                                                </div>
+                                                @if ($errors->has('topeprop_id') )
+                                                    <div class="">
+                                                        {{ $errors->first('topeprop_id') }}
+                                                    </div>
+                                                @endif
                                             </div>
                                         </form>
                                     </div>
