@@ -3,16 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\BuscadorRequest;
 
 class BuscadorController extends Controller
 {
-    public function busquedaPrincipal(BuscadorRequest $request)
+    public function busquedaPrincipal(Request $request)
     {
         //$tprop_id = $request->input("tprop_id");
        //$topeprop_id = $request->input("topeprop_id");
 
-        $request()->validate();
+        $datos = request()->validate([
+            'tprop_id' => 'required',
+            'topeprop_id' => 'required_if:tprop_id,1'
+        ],
+        [
+            //'tprop_id.min' => 'Debe seleccionar al menos un campo.'
+        ]);
 
         // var_dump($tprop_id);
         // var_dump($topeprop_id);
