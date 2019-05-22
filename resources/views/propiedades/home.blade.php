@@ -52,6 +52,38 @@
                                     <div class="card-body">
                                         <form method="POST" action="{{ route('buscador.principal') }}">
                                             {!! csrf_field() !!}
+
+                                            <div class="form-row">
+                                                <div class="col-md-5">
+                                                    <select class="custom-select is-invalid" name='tprop_id'>
+                                                        <option value="0" selected>Tipo de Propiedad</option>
+                                                        @foreach ($tipPropiedades as $tipo)
+                                                            <option value="{{ $tipo->id }}">{{ $tipo->descripcion }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid city.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <select class="custom-select" name='topeprop_id'>
+                                                        <option value="0" selected>Tipo de Operación</option>
+                                                        @foreach ($tipOperaPropiedades as $tipoOpe)
+                                                            <option value="{{ $tipoOpe->id }}">{{ $tipoOpe->descripcion }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <div class="valid-feedback">
+                                                        Please provide a valid state.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <button class="btn btn-primary" type="submit">Buscar</button>
+                                                </div>
+                                            </div>
+
+
+
+{{-- 
                                             <div class="input-group">
                                                 <select class="custom-select" name='tprop_id'>
                                                     <option value="0" selected>Tipo de Propiedad</option>
@@ -59,7 +91,6 @@
                                                         <option value="{{ $tipo->id }}">{{ $tipo->descripcion }}</option>
                                                     @endforeach
                                                 </select>
-                                                {{--  <input type="text" aria-label="First name" class="form-control" placeholder="Zona">  --}}
                                                 <select class="custom-select" name='topeprop_id'>
                                                     <option value="0" selected>Tipo de Operación</option>
                                                     @foreach ($tipOperaPropiedades as $tipoOpe)
@@ -67,23 +98,17 @@
                                                     @endforeach
                                                 </select>
                                                 <div class="input-group-prepend">
-                                                    {{--  <a href="{{ route('prop.index') }}" style="text-decoration:none; ">
-                                                        <span class="input-group-text">Ir</span>
-                                                    </a>  --}}
                                                     <button class="btn btn-outline-secondary" type="submit">Ir</button>
                                                 </div>
-                                                @if ($errors->has('tprop_id') )
+                                                <br>
+                                                @if ($errors->has('mensaje') )
                                                     <div class="">
-                                                        {{ $errors->first('tprop_id') }}
+                                                        {{ $errors->first('mensaje') }}
                                                     </div>
                                                 @endif
-                                                </div>
-                                                @if ($errors->has('topeprop_id') )
-                                                    <div class="">
-                                                        {{ $errors->first('topeprop_id') }}
-                                                    </div>
-                                                @endif
-                                            </div>
+                                            </div> --}}
+
+
                                         </form>
                                     </div>
                                 </div>
