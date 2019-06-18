@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use App\Models\{Propiedades};
 
 class BuscadorController extends Controller
 {
@@ -53,10 +54,13 @@ class BuscadorController extends Controller
         // var_dump($datos);
         //var_dump(request()->all());
         //die("trabajando");
-        // $propiedades = Propiedades::with('imagenesPropiedades', 'caracteristicasPropiedades')
-        //                 ->orderByDesc('created_at')->paginate(1);
+        $propiedades = Propiedades::with('imagenesPropiedades', 'caracteristicasPropiedades')
+                        ->where('tprop_id', $tprop_id)
+                        ->orWhere('topeprop_id', $topeprop_id)
+                        ->orderByDesc('created_at')->get();
+                        //paginate(1);
+                        //die($propiedades);
 
-        // return view('propiedades.index', compact('propiedades'));
-        die("holaaa");
+        return view('propiedades.index', compact('propiedades'));
     }
 }

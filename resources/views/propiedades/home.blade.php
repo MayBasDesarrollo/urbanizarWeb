@@ -44,7 +44,7 @@
         </div>
         <div class="container" style="">
             <div class="row justify-content-md-center centrarUrba">
-                <div class="col-md-offset-3 col-md-9">
+                <div class="col-md-offset-4 col-md-8">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-md-12">
@@ -55,60 +55,31 @@
 
                                             <div class="form-row">
                                                 <div class="col-md-5">
-                                                    <select class="custom-select is-invalid" name='tprop_id'>
+                                                    <select class="custom-select {{ $errors->has('mensaje') ? ' is-invalid' : '' }}" name='tprop_id'>
                                                         <option value="0" selected>Tipo de Propiedad</option>
                                                         @foreach ($tipPropiedades as $tipo)
                                                             <option value="{{ $tipo->id }}">{{ $tipo->descripcion }}</option>
                                                         @endforeach
                                                     </select>
-                                                    <div class="invalid-feedback">
-                                                        Please provide a valid city.
-                                                    </div>
+                                                    @if ($errors->has('mensaje') )
+                                                        <div class="invalid-feedback">
+                                                            Introduzca al menos un parametro de búsqueda.
+                                                        </div>
+                                                    @endif
                                                 </div>
                                                 <div class="col-md-5">
-                                                    <select class="custom-select" name='topeprop_id'>
+                                                    <select class="custom-select {{ $errors->has('mensaje') ? ' is-invalid' : '' }}" name='topeprop_id'>
                                                         <option value="0" selected>Tipo de Operación</option>
                                                         @foreach ($tipOperaPropiedades as $tipoOpe)
                                                             <option value="{{ $tipoOpe->id }}">{{ $tipoOpe->descripcion }}</option>
                                                         @endforeach
                                                     </select>
-                                                    <div class="valid-feedback">
-                                                        Please provide a valid state.
-                                                    </div>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <button class="btn btn-primary" type="submit">Buscar</button>
                                                 </div>
                                             </div>
-
-
-
-{{-- 
-                                            <div class="input-group">
-                                                <select class="custom-select" name='tprop_id'>
-                                                    <option value="0" selected>Tipo de Propiedad</option>
-                                                    @foreach ($tipPropiedades as $tipo)
-                                                        <option value="{{ $tipo->id }}">{{ $tipo->descripcion }}</option>
-                                                    @endforeach
-                                                </select>
-                                                <select class="custom-select" name='topeprop_id'>
-                                                    <option value="0" selected>Tipo de Operación</option>
-                                                    @foreach ($tipOperaPropiedades as $tipoOpe)
-                                                        <option value="{{ $tipoOpe->id }}">{{ $tipoOpe->descripcion }}</option>
-                                                    @endforeach
-                                                </select>
-                                                <div class="input-group-prepend">
-                                                    <button class="btn btn-outline-secondary" type="submit">Ir</button>
-                                                </div>
-                                                <br>
-                                                @if ($errors->has('mensaje') )
-                                                    <div class="">
-                                                        {{ $errors->first('mensaje') }}
-                                                    </div>
-                                                @endif
-                                            </div> --}}
-
-
+                                            
                                         </form>
                                     </div>
                                 </div>
