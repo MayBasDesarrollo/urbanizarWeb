@@ -131,36 +131,40 @@
                     </div>
                 </div>
             </div>  --}}
-            <div class="col-md-12">
-                @foreach ($propiedades as $propiedad) 
-                    <div class="media baner-prop">
-                        @foreach ($propiedad->imagenesPropiedades as $imagen)
-                            <a href="{{ route('prop.show', ['id'=> $propiedad->id]) }}">
-                                <img class="align-self-start mr-3" src="{{asset($imagen->ruta)}}" alt="" style="width:270px; height: 200px;">
-                            </a> 
-                            @break
-                        @endforeach
-                        <div class="media-body">
-                            <a href="{{ route('prop.show', ['id'=> $propiedad->id]) }}" style="text-decoration:none;color:black;">
-                                <h5 class="mt-0">{{ $propiedad->nombre}}</h5>
-                            </a>
-                            <p>{{ str_limit($propiedad->descripcion, 500) }}</p>
-                            <small class="float-right">$ {{ $propiedad->valor }}</small>
-                            <i class="fas fa-history">
-                                <small>
-                                    @if ($propiedad->upadate_at == "")
-                                        Creado: {{ substr($propiedad->created_at, 0, 10) }}
-                                    @else
-                                        Modificado: {{ substr($propiedad->upadated_at, 0, 10) }}
-                                    @endif 
-                                </small>
-                            </i>
+            <div class="col-md-12" style="min-height: -webkit-fill-available;">
+                @if ($propiedades->isNotEmpty())
+                    @foreach ($propiedades as $propiedad) 
+                        <div class="media baner-prop">
+                            @foreach ($propiedad->imagenesPropiedades as $imagen)
+                                <a href="{{ route('prop.show', ['id'=> $propiedad->id]) }}">
+                                    <img class="align-self-start mr-3" src="{{asset($imagen->ruta)}}" alt="" style="width:270px; height: 200px;">
+                                </a> 
+                                @break
+                            @endforeach
+                            <div class="media-body">
+                                <a href="{{ route('prop.show', ['id'=> $propiedad->id]) }}" style="text-decoration:none;color:black;">
+                                    <h5 class="mt-0">{{ $propiedad->nombre}}</h5>
+                                </a>
+                                <p>{{ str_limit($propiedad->descripcion, 500) }}</p>
+                                <small class="float-right">$ {{ $propiedad->valor }}</small>
+                                <i class="fas fa-history">
+                                    <small>
+                                        @if ($propiedad->upadate_at == "")
+                                            Creado: {{ substr($propiedad->created_at, 0, 10) }}
+                                        @else
+                                            Modificado: {{ substr($propiedad->upadated_at, 0, 10) }}
+                                        @endif 
+                                    </small>
+                                </i>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
-                <ul class="pagination justify-content-center mb-4">
-                    {{ $propiedades->render() }}
-                </ul>
+                    @endforeach
+                    <ul class="pagination justify-content-center mb-4">
+                        {{ $propiedades->appends(request(['tprop_id','topeprop_id']))->links() }}
+                    </ul>
+                @else
+                    <p class="text-center">No se encontraron resultados para su búsqueda.</p>
+                @endif
             </div>
         </div>
     </div>

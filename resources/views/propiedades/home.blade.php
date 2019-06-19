@@ -50,7 +50,7 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <form method="POST" action="{{ route('buscador.principal') }}">
+                                        <form method="GET" action="{{ route('buscador.principal') }}">
                                             {!! csrf_field() !!}
 
                                             <div class="form-row">

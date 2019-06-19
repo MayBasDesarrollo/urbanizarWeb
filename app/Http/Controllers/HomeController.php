@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\{Propiedades, TipoPropiedades, TipoOperacionPropiedades};
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 
 class HomeController extends Controller
 {

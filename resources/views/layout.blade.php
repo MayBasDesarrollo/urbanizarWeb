@@ -74,7 +74,6 @@
 
     @yield('content')
 
-    <!-- Footer -->
     <footer id="footer">
         <section id="contact" class="section-bg wow fadeInUp" style="background-color: #f8f9fa;visibility: visible; animation-name: fadeInUp;">
             <div class="container">
