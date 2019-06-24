@@ -22,9 +22,6 @@ Route::get('/home', 'Admin\AdminController@index')
 Route::get('usuarios', 'Users\UserController@index')
                 ->name('users.index');
 
-
-
-
 Route::get('usuarios/{user}', 'Users\UserController@show')
                 ->where('user', '[0-9]+')
                 ->name('users.show');
@@ -32,9 +29,15 @@ Route::get('usuarios/{user}', 'Users\UserController@show')
 Route::get('usuarios/nuevo', 'Users\UserController@create')
                 ->name('users.create');
 
+Route::post('usuarios', 'Users\UserController@store');
+
 Route::get('usuarios/{user}/editar', 'Users\UserController@edit')
                 ->where('id', '[0-9]+')
                 ->name('users.edit');
+
+
+
+
 
 Route::delete('usuarios/{user}', 'Users\UserController@destroy')
                 ->name('users.delete');
