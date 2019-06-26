@@ -29,6 +29,9 @@
                             <small>Creación de Usuarios</small>
                         </div>
                         <div class="card-body">
+                            <div class="alert alert-warning" role="alert">
+                                Si desea modificar la <strong>contraseña</strong> recuerde que la misma debe contener un formato de minimo 6 caracteres, letras, números y al menos un caracter especial.
+                            </div>
                             <form action="{{ url("usuarios/{$user->id}") }}" method="POST">
                                 @csrf
                                 @method('PUT')

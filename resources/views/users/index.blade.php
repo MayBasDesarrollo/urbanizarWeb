@@ -53,16 +53,16 @@
                                                 <th scope="row">{{ $user->name}}</th>
                                                 <td>{{$user->email}}</td>
                                                 <td class="text-center">
-                                                    <form action="{{ route('users.delete', $user) }}" method="POST">
-                                                        {{ method_field('DELETE') }}
-                                                        {!! csrf_field() !!}
-                                                        <a href="{{ route('users.show', $user) }}" class="btn btn-link">
+                                                    <form action="{{ route('users.trash', $user) }}" method="POST">
+                                                            @csrf
+                                                            @method('PATCH')
+                                                        <a href="{{ route('users.show', $user) }}" class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Ver Usuario">
                                                             <i style="color: yellowgreen;" class="fas fa-user"></i>
                                                         </a>
-                                                        <a href="{{ route('users.edit', $user) }}" class="btn btn-link">
+                                                        <a href="{{ route('users.edit', $user) }}" class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Editar Usuario">
                                                             <i style="color: steelblue;" class="fas fa-user-edit"></i>
                                                         </a>
-                                                        <button type="submit" class="btn btn-link">
+                                                        <button type="submit" class="btn btn-link" data-placement="top" title="Eliminar Usuario">
                                                             <i style="color: indianred;" class="fas fa-user-times"></i>
                                                         </button>
                                                     </form>

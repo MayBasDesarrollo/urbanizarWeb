@@ -15,7 +15,7 @@ Route::get('propiedades/', 'PropiedadesController@index')->name('prop.index');
 Route::get('/buscador_principal', 'BuscadorController@busquedaPrincipal')->name('buscador.principal');
 
 
-/* ************************************** */
+/* ******************** PARTE ADMINISTRATIVA ****************** */
 Route::get('/home', 'Admin\AdminController@index')
                 ->name('AdminHome');
 
@@ -35,9 +35,7 @@ Route::get('usuarios/{user}/editar', 'Users\UserController@edit')
                 ->where('id', '[0-9]+')
                 ->name('users.edit');
 
+Route::put('usuarios/{user}', 'Users\UserController@update');
 
-
-
-
-Route::delete('usuarios/{user}', 'Users\UserController@destroy')
-                ->name('users.delete');
+Route::patch('usuarios/{user}/papelera', 'Users\UserController@trash')
+                ->name('users.trash');

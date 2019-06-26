@@ -29,6 +29,9 @@
                             <small>Creación de Usuarios</small>
                         </div>
                         <div class="card-body">
+                            <div class="alert alert-warning" role="alert">
+                                La <strong>contraseña</strong> debe contener un formato de minimo 6 caracteres, letras, números y al menos un caracter especial.
+                            </div>
                             <form action="{{ url('usuarios') }}" method="POST">
                                 @csrf
                                 <div class="form-row">

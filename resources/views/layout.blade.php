@@ -9,6 +9,9 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="apple-touch-icon" href="{{ asset('img/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
+
     <title>Urbanizar</title>
 
     <!-- Bootstrap core CSS -->
