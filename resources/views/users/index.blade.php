@@ -31,14 +31,32 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm">
-                                    <div class="d-flex justify-content-start">
+                                    <div class="d-flex justify-content-end">
                                         <a href="{{ route('users.create') }}" type="submit" class="btn btn-outline-ike mb-2">
                                             <i class="fas fa-user-plus"></i>
                                         </a>
                                     </div>
+                                    <form method="get" action="{{ url('usuarios') }}">
+                                        @csrf
+                                        <div class="row row-filters">
+                                            <div class="col-md-6">
+                                                <div class="form-inline form-search">
+                                                    <div class="input-group">
+                                                        <input type="search" name="search" value="{{ request('search') }}" class="form-control form-control-sm" placeholder="Buscar...">
+                                                        <div class="input-group-append">
+                                                            <button type="submit" class="btn btn-secondary btn-sm">
+                                                                <i class="fas fa-search"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-                            <div class="table-responsive">
+                            <br>
+                            {{--  <div class="table-responsive">  --}}
                                 <table class="table table-bordered">
                                     <thead class="table-secondary">
                                         <tr  style="color: white;background-color: #3d5afe;">
@@ -73,10 +91,10 @@
                                         @endforelse
                                     </tbody>
                                 </table>
-                                {{--  <div class="row">
+                                <div class="row">
                                     <span class="mx-auto">{{ $users->links() }}</span>
-                                </div>  --}}
-                            </div>
+                                </div>
+                            {{--  </div>  --}}
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Users;
 
-use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateUserRequest;
@@ -13,7 +12,15 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all();
+        //$users = User::orderByDesc('created_at')->paginate(5);
+        $users = User::query()
+            ->when(request('search'), function($query, $search){
+                $query->where('name', 'like',"%{$search}%")
+                    ->orWhere('email', 'like',"%{$search}%");
+            })
+            ->orderByDesc('created_at')
+            ->paginate(5);
+            
 
         return view('users.index', compact('users'));
     }

@@ -51,7 +51,7 @@
                         <div class="card-body">
                             <div class="stat-widget-five">
                                 <div class="stat-icon dib flat-color-3">
-                                    <i class="fas fa-envelope"></i>
+                                    <i class="menu-icon fas fa-inbox"></i>
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib">
@@ -69,12 +69,12 @@
                         <div class="card-body">
                             <div class="stat-widget-five">
                                 <div class="stat-icon dib flat-color-2">
-                                    <i class="fas fa-arrow-alt-circle-down"></i>
+                                    <i class="fas fa-envelope"></i>
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib">
                                         <div class="stat-text"><span class="count">0</span></div>
-                                        <div class="stat-heading">No se</div>
+                                        <div class="stat-heading">Sin leer</div>
                                     </div>
                                 </div>
                             </div>

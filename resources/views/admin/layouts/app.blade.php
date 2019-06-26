@@ -36,7 +36,6 @@
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    {{--  <li class="">  --}}
                     <li  @if ($vista == "Home") class="active" @endif>
                         <a href="{{ route('AdminHome') }}">
                             <i class="menu-icon fa fa-laptop"></i>Home
@@ -59,12 +58,6 @@
                             <i class="menu-icon fa fa-images"></i>Carrusel de Fotos 
                         </a>
                     </li>
-                    {{--  <li class="menu-title">Reportes</li>
-                    <li @if ($vista == "Reporte Condicionados") class="active" @endif>
-                        <a href="{{ route('AdminHome') }}"> 
-                            <i class="menu-icon fab fa-wpforms"></i>Reporte Condicionados
-                        </a>
-                    </li>  --}}
                     </li>
                     <li class="menu-title">Mensajes</li>
                     <li @if ($vista == "Bandeja de Mensajes") class="active" @endif>
@@ -96,7 +89,6 @@
                             <img class="user-avatar rounded-circle" src="{{ asset('img/propiedades-alquiler.png') }}" alt="User Avatar">
                         </a>
                         <div class="user-menu dropdown-menu">
-                            {{--  <a class="nav-link" href="#">Mi Perfil</a>  --}}
                             <a class="nav-link" href=""
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
